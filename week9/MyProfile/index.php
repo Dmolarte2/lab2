@@ -243,9 +243,9 @@ PI = PI + 10;   // This will also give an error
       $servername = "localhost";
       $username = "root";
       $password = "";
-      $dbname = "myDB";
+      $dbname = "testDB";
       
-      // Create connection
+      // Create connection lol
       $conn = new mysqli($servername, $username, $password, $dbname);
       // Check connection
       if ($conn->connect_error) {
