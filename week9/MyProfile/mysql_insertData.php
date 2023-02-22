@@ -1,8 +1,8 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "testDB";
+$username = "webprogmi212";
+$password = "webprogmi212";
+$dbname = "webprogmi212";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -11,7 +11,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 } 
 
-$sql = "INSERT INTO MyGuests (firstname, lastname, email)
+$sql = "INSERT INTO dmolarte2_myguests (firstname, lastname, email)
 VALUES ('Juan', 'Doe Cruz', 'juan@example.com')";
 
 if ($conn->query($sql) === TRUE) {

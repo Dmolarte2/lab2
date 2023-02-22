@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "webprogmi212";
+$password = "webprogmi212";
 
 // Create connection
 $conn = mysqli_connect($servername, $username, $password);
@@ -11,7 +11,7 @@ if ($conn->connect_error) {
 }
 
 // Create database
-$sql = "CREATE DATABASE testDB";
+$sql = "CREATE DATABASE webprogmi212";
 if ($conn->query($sql) === TRUE) {
   echo "Database created successfully";
 } else {
