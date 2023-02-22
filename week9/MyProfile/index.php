@@ -220,67 +220,66 @@ PI = PI + 10;   // This will also give an error
       <br><br>
       <input type="submit" name="submit" value="Submit">  
     </form>
+
+<?php
+echo "<h2>Your Input:</h2>";
+echo $name;
+echo "<br>";
+echo $email;
+echo "<br>";
+echo $website;
+echo "<br>";
+echo $comment;
+echo "<br>";
+echo $gender;
+?>
+    
+    
     
     <?php
-    echo "<h2>Your Input:</h2>";
-    echo $name;
-    echo "<br>";
-    echo $email;
-    echo "<br>";
-    echo $website;
-    echo "<br>";
-    echo $comment;
-    echo "<br>";
-    echo $gender;
-    ?>
-    
-    
-    
-    <?php
-
-        if ($_SERVER["REQUEST_METHOD"] == "POST") 
-        {
-          $servername = "192.168.150.213";
-          $username = "webprogmi212";
-          $password = "b3ntRhino98";
-          $dbname = "webprogmi212";
-          
-          // Create connection
-          $conn = new mysqli($servername, $username, $password, $dbname);
-          // Check connection
-          if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-          }
-
-          // sql to create table
-          $sql = "CREATE TABLE dmolarte2_MyGuests (
-            name VARCHAR(30) NOT NULL,
-            email VARCHAR(50) NOT NULL,
-            website VARCHAR(30),
-            comment TEXT(500),
-            gender VARCHAR(10) NOT NULL
-            )";
-            
-          if ($conn->query($sql) === TRUE) {
-            echo "Table dmolarte2_MyGuests created successfully";
-          } else {
-            echo "Error creating table: " . $conn->error;
-          }
-          
-          $sql = "INSERT INTO dmolarte2_MyGuests (name, email, website, comment, gender)
-          VALUES ('$name', '$email', '$website', '$comment', '$gender')";
-          
-          if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
-          } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
-          }
-          
-          $conn->close();
+      if ($_SERVER["REQUEST_METHOD"] == "POST") 
+      {
+        $servername = "192.168.150.213";
+        $username = "webprogmi212";
+        $password = "b3ntRhino98";
+        $dbname = "webprogmi212";
+        
+        // Create connection
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+          die("Connection failed: " . $conn->connect_error);
         }
-        ?>        
-    
 
+        // sql to create table
+        $sql = "CREATE TABLE dmolarte2_MyGuestss (
+          name VARCHAR(30) NOT NULL,
+          email VARCHAR(50) NOT NULL,
+          website VARCHAR(30),
+          comment TEXT(500),
+          gender VARCHAR(10) NOT NULL
+          )";
+          
+        if ($conn->query($sql) === TRUE) {
+          echo "Table dmolarte2_MyGuests created successfully";
+        } else {
+          echo "Error creating table: " . $conn->error;
+        }
+        
+        $sql = "INSERT INTO dmolarte2_MyGuestss (name, email, website, comment, gender)
+        VALUES ('$name', '$email', '$website', '$comment', '$gender')";
+        
+        if ($conn->query($sql) === TRUE) {
+          echo "New record created successfully";
+        } else {
+          echo "Error: " . $sql . "<br>" . $conn->error;
+        }
+        
+        $conn->close();
+      }
+  
+    ?>        
+    
   <!-- contact eme -->
   <div class=" w3-content" id="contact">
     <h2 style="font-color:#0F0F0F;">Contact Me</h2>
